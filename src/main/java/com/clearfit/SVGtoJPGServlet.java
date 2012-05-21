@@ -17,8 +17,10 @@ public class SVGtoJPGServlet extends HttpServlet {
 
     try {
       String svg = req.getParameter("svg").replaceAll("\\n", "");
+      System.err.println("SVG follows:");
+      System.err.println(svg);
 
-      byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
+      byte[] jpg_bytes = StringToJPEG.call(svg);
 
       if(jpg_bytes.length > 0) {
         res.setContentType("image/jpeg");
