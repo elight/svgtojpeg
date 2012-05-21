@@ -27,7 +27,7 @@ public class SVGtoJPGServlet extends HttpServlet {
         out.close();
       }
     } catch(Exception e) {
-      e.printStacktrace();
+      e.printStackTrace();
       res.setStatus(500);
     }
   }
