@@ -38,6 +38,24 @@
         </dependency>
         <dependency>
           <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-gui-util</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-svggen</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-swing</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
           <artifactId>batik-anim</artifactId>
           <version>1.7</version>
           <scope>compile</scope>
@@ -160,6 +178,12 @@
           <groupId>org.apache.xmlgraphics</groupId>
           <artifactId>batik-ext</artifactId>
           <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>xerces</groupId>
+          <artifactId>xerces</artifactId>
+          <version>2.5</version>
           <scope>compile</scope>
         </dependency>
         <dependency>
