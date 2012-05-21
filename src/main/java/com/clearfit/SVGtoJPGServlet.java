@@ -9,21 +9,26 @@ import org.eclipse.jetty.servlet.*;
 public class SVGtoJPGServlet extends HttpServlet {
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
+  protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    throws ServletException, IOException, {
 
-    byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
+    try {
+      byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
 
-    if(jpg_bytes.length > 0) {
-      res.setContentType("image/jpeg");
-      res.setStatus(HttpServletResponse.SC_OK);
-      ServletOutputStream out = res.getOutputStream();
-      out.write(jpg_bytes);
-      out.flush();
-      out.close();
+      if(jpg_bytes.length > 0) {
+        res.setContentType("image/jpeg");
+        res.setStatus(HttpServletResponse.SC_OK);
+        ServletOutputStream out = res.getOutputStream();
+        out.write(jpg_bytes);
+        out.flush();
+        out.close();
+      }
+    } catch(Exception e) {
+      res.setStatus(500);
     }
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception{
     Server server = new Server(Integer.valueOf(System.getenv("PORT")));
     ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
     context.setContextPath("/");
