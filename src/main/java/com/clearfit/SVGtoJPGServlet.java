@@ -7,7 +7,7 @@ import org.eclipse.jetty.servlet.*;
 public class SVGtoJPGServlet extends HttpServlet {
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
     throws ServletException, IOException {
     resp.getWriter().print("Hello from Java!\n");
   }
