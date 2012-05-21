@@ -9,8 +9,7 @@ import org.eclipse.jetty.servlet.*;
 public class SVGtoJPGServlet extends HttpServlet {
 
   @Override
-  protected void doPost(HttpServletRequest req, HttpServletResponse res)
-    throws ServletException, IOException {
+  protected void doPost(HttpServletRequest req, HttpServletResponse res) throws Exception {
 
     byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
 
@@ -24,7 +23,7 @@ public class SVGtoJPGServlet extends HttpServlet {
     }
   }
 
-  public static void main(String[] args) throws Exception{
+  public static void main(String[] args) throws Exception {
     Server server = new Server(Integer.valueOf(System.getenv("PORT")));
     ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
     context.setContextPath("/");
