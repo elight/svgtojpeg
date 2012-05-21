@@ -13,7 +13,7 @@
 
   <servlet>
     <servlet-name>svgtojpg</servlet-name>
-    <servlet-class>com.clearfit.SVGtoJPG</servlet-class>
+    <servlet-class>com.clearfit.SVGtoJPGServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
