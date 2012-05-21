@@ -9,9 +9,19 @@ import org.eclipse.jetty.servlet.*;
 public class SVGtoJPGServlet extends HttpServlet {
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp)
     throws ServletException, IOException {
-    resp.getWriter().print("Hello from Java!\n");
+
+    byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
+
+    if(jpg_bytes.length > 0) {
+      res.setContentType("image/jpeg");
+      res.setStatus(HttpServletResponse.SC_OK);
+      ServletOutputStream out = res.getOutputStream();
+      out.write(jpg_bytes);
+      out.flush();
+      out.close();
+    }
   }
 
   public static void main(String[] args) throws Exception{
