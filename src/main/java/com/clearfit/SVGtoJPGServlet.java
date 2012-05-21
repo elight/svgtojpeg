@@ -12,6 +12,9 @@ public class SVGtoJPGServlet extends HttpServlet {
   protected void doPost(HttpServletRequest req, HttpServletResponse res)
     throws ServletException, IOException {
 
+    System.err.println("SVG follows:");
+    System.err.println(req.getParameter("svg"));
+
     try {
       byte[] jpg_bytes = StringToJPEG.call(req.getParameter("svg"));
 
