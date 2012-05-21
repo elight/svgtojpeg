@@ -121,6 +121,48 @@
           <scope>compile</scope>
         </dependency>
         <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-svg-dom</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-bridge</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-awt-util</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-gvt</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-transcoder</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-extension</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-ext</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
           <groupId>xalan</groupId>
           <artifactId>xalan</artifactId>
           <version>2.6.0</version>
@@ -143,35 +185,6 @@
           <artifactId>fop</artifactId>
           <version>0.94</version>
           <scope>compile</scope>
-          <exclusions>
-            <exclusion>
-              <artifactId>batik-svg-dom</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-bridge</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-awt-util</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-gvt</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-transcoder</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-extension</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
-            <exclusion>
-              <artifactId>batik-ext</artifactId>
-              <groupId>batik</groupId>
-            </exclusion>
           </exclusions>
         </dependency>
         <dependency>
