@@ -44,12 +44,6 @@
         </dependency>
         <dependency>
           <groupId>org.apache.xmlgraphics</groupId>
-          <artifactId>batik-awt-util</artifactId>
-          <version>1.7</version>
-          <scope>compile</scope>
-        </dependency>
-        <dependency>
-          <groupId>org.apache.xmlgraphics</groupId>
           <artifactId>batik-css</artifactId>
           <version>1.7</version>
           <scope>compile</scope>
@@ -77,6 +71,12 @@
               <groupId>org.apache.xmlgraphics</groupId>
             </exclusion>
           </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlgraphics</groupId>
+          <artifactId>batik-codec</artifactId>
+          <version>1.7</version>
+          <scope>compile</scope>
         </dependency>
         <dependency>
           <groupId>org.apache.xmlgraphics</groupId>
