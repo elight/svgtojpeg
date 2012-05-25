@@ -1,6 +1,7 @@
 package com.clearfit;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.zip.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import org.eclipse.jetty.server.Server;
@@ -18,7 +19,18 @@ public class SVGtoJPGServlet extends HttpServlet {
     try {
       String svg = req.getParameter("svg").replaceAll("\\n", "");
       System.err.println("SVG follows:");
-      System.err.println(svg);
+
+      InputStream is = new ByteArrayInputStream(svg.getBytes());
+      GZIPInputStream gzis = new GZIPInputStream(is);
+      BufferedReader br = new BufferedReader(new InputStreamReader(gzis));
+
+      String line;
+      StringBuffer sb = new StringBuffer();
+      while((line = br.readLine()) != null) {
+        sb.append(line);
+      }
+
+      svg = sb.toString();
 
       byte[] jpg_bytes = StringToJPEG.call(svg);
 
