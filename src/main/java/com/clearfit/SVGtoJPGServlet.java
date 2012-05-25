@@ -18,8 +18,9 @@ public class SVGtoJPGServlet extends HttpServlet {
 
     try {
       String svg = req.getParameter("svg").replaceAll("\\n", "");
-      System.err.println("SVG follows:");
+      System.err.println("SVG follows: \n" + svg);
 
+      /*
       InputStream is = new ByteArrayInputStream(svg.getBytes());
       GZIPInputStream gzis = new GZIPInputStream(is);
       BufferedReader br = new BufferedReader(new InputStreamReader(gzis));
@@ -31,6 +32,7 @@ public class SVGtoJPGServlet extends HttpServlet {
       }
 
       svg = sb.toString();
+      */
 
       byte[] jpg_bytes = StringToJPEG.call(svg);
 
