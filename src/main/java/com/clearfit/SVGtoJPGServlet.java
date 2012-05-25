@@ -4,8 +4,6 @@ import java.io.*;
 import java.util.zip.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.*;
 
 public class SVGtoJPGServlet extends HttpServlet {
 
@@ -48,15 +46,5 @@ public class SVGtoJPGServlet extends HttpServlet {
       e.printStackTrace();
       res.setStatus(500);
     }
-  }
-
-  public static void main(String[] args) throws Exception{
-    Server server = new Server(Integer.valueOf(System.getenv("PORT")));
-    ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-    context.setContextPath("/");
-    server.setHandler(context);
-    context.addServlet(new ServletHolder(new SVGtoJPGServlet()),"/*");
-    server.start();
-    server.join();
   }
 }
